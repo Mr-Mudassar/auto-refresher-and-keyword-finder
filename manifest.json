@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Auto Refresh and Keyword Alert",
+    "version": "1.0",
+    "description": "Refreshes the page every 3 seconds and alerts if a specific keyword is found.",
+    "permissions": ["activeTab", "scripting", "storage", "tabs"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+      }
+    },
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+  
